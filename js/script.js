@@ -67,6 +67,7 @@ let i = 0,
 
         txt = `${a} ${b} ${c} = ?`;
         elementIdTime.innerHTML = txt;
+        // typeWriter();
     },
 
     switchSymbol = (a, b, c) => {
@@ -206,8 +207,6 @@ let i = 0,
 
             arr = [resultOfActionOp1, resultOfActionOp2, resultOfActionOp3, resultOfActionOp4];
 
-
-
             option1.innerHTML = arr[0];
             option2.innerHTML = arr[1];
             option3.innerHTML = arr[2];
@@ -264,8 +263,6 @@ let i = 0,
 
             arr = [resultOfActionOp1, resultOfActionOp2, resultOfActionOp3, resultOfActionOp4];
 
-            arr.sort();
-
             option1.innerHTML = arr[0];
             option2.innerHTML = arr[1];
             option3.innerHTML = arr[2];
@@ -303,5 +300,5 @@ let i = 0,
             }
         }
     };
-    
+
 start();
