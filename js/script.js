@@ -11,7 +11,7 @@ let i = 0,
     A = "",
     B = "",
     C = "",
-      x = 0,
+    x = 0,
     y = 0,
     speed = 120,
     elementIdTime = document.getElementById("time"),
@@ -24,13 +24,13 @@ let i = 0,
         return Math.floor(Math.random() * 4) + 1;
     },
 
-    typeWriter = () => {
-        if (i < txt.length) {
-            elementIdTime.innerHTML += txt.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-        }
-    },
+    // typeWriter = () => {
+    //     if (i < txt.length) {
+    //         elementIdTime.innerHTML += txt.charAt(i);
+    //         i++;
+    //         setTimeout(typeWriter, speed);
+    //     }
+    // },
 
     genAsk = () => {
 
@@ -66,6 +66,7 @@ let i = 0,
         switchSymbol(a, b, c);
 
         txt = `${a} ${b} ${c} = ?`;
+        elementIdTime.innerHTML = txt;
     },
 
     switchSymbol = (a, b, c) => {
@@ -90,6 +91,8 @@ let i = 0,
                 break;
         }
     },
+
+
     switchSymbolOptions = (a, b, c) => {
         switch (b) {
             case "+":
@@ -272,25 +275,33 @@ let i = 0,
 
     },
 
-  
+
     query = (a) => {
         x = document.getElementById(`option-${a}`);
         y = +x.innerText;
-
+        startA(y);
     },
 
     error = 0,
     succ = 0,
-    start = (a) => {
+
+    start = () => {
         if (error <= 3) {
             genAsk();
-            typeWriter();
             showOptions();
-            query(a);
-            if (y == resultOfAction) {
+        }
+    },
+
+    startA = (a) => {
+        if (error <= 3) {
+            if (a == resultOfAction) {
                 succ++;
+                start();
             } else {
                 error++;
+                start();
             }
         }
     };
+    
+start();
