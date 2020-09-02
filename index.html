@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+    <div class="main_block">
+        <div class="cart">
+            <div class="mini-table">
+                <div class="mini-table_left">
+                    <h4>SUKCES</h4>
+                    <h4 id="sukces"></h4>
+                </div>
+                <div class="mini-table_right">
+                    <h4>PORAŻKA</h4>
+                    <h4 class="unSukces"><span id="unSukces">0</span>/3</h4>
+                </div>
+            </div>
+            <div class="cart_head">
+                <h4 id="time"></h4>
+            </div>
+            <div class="cart_body">
+                <div class="cart_body-title">
+                    <h3>Wybierz właściwą odpowiedź</h3>
+
+                    <div class="selectQuery" id="reaction-1" onclick="start(1)">
+                        <h2>a)</h2>
+                        <h2 id="option-1"> 54</h2>
+                    </div>
+                    <div class="selectQuery" id="reaction-2" onclick="start(2)">
+                        <h2>b)</h2>
+                        <h2 id="option-2"> 54</h2>
+                    </div>
+                    <div class="selectQuery" id="reaction-3" onclick="start(3)">
+                        <h2>c)</h2>
+                        <h2 id="option-3"> 54</h2>
+                    </div>
+                    <div class="selectQuery" id="reaction-4" onclick="start(4)">
+                        <h2>d)</h2>
+                        <h2 id="option-4"> 54</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
