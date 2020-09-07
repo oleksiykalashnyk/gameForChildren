@@ -258,8 +258,7 @@ h4 {
 }
 
 .button {
-    padding: 15px 25px;
-    font-size: 24px;
+
     text-align: center;
     cursor: pointer;
     outline: none;
@@ -269,6 +268,11 @@ h4 {
     border-radius: 15px;
     box-shadow: 0 9px #999;
     transition: 0s;
+}
+
+.buttonFix {
+    padding: 15px 25px;
+    font-size: 24px;
 }
 
 .button:hover {
