@@ -26,7 +26,6 @@ File path | File  | Description
 /js/           |**script.js**|         The main mechanism of the application
 
 
-####### The project was made as part of the training.
-Noncommercial project.
-All sounds, images, and so on belong to the authors (who couldn't be found).
-If you are the author please contact us via email
+#### The project was made as part of the training.Noncommercial project.
+###### All sounds, images, and so on belong to the authors (who couldn't be found).
+###### If you are the author please contact us via email olek.kalashnyk@gmail.com
