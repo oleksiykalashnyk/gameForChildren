@@ -1,7 +1,6 @@
-[gameForChildren](https://github.com/oleksiykalashnyk/taskForJS-gameForChildren)
+[gameForChildren](https://github.com/oleksiykalashnyk/taskForJS-gameForChildren)  ([demo](https://oleksiykalashnyk.github.io/taskForJS-gameForChildren/) )
 ========================
-[demo](https://oleksiykalashnyk.github.io/taskForJS-gameForChildren/)
----------------------------
+
 Author of the idea: 
 **Miłosz Stanek**
 
