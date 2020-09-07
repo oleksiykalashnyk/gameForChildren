@@ -170,20 +170,6 @@ let i = 0,
                 let a = getRandomInt9();
                 resultOfActionOp4 += a;
             }
-
-            resultOfActionOp1 = parseInt(resultOfActionOp1);
-            resultOfActionOp2 = parseInt(resultOfActionOp2);
-            resultOfActionOp3 = parseInt(resultOfActionOp3);
-            resultOfActionOp4 = parseInt(resultOfActionOp4);
-
-            arr = [resultOfActionOp1, resultOfActionOp2, resultOfActionOp3, resultOfActionOp4];
-
-            arr.sort();
-
-            option1.innerHTML = arr[0];
-            option2.innerHTML = arr[1];
-            option3.innerHTML = arr[2];
-            option4.innerHTML = arr[3];
         }
 
         if (b == b2) {
@@ -199,18 +185,6 @@ let i = 0,
                 let a = getRandomInt9();
                 resultOfActionOp4 += a;
             }
-
-            resultOfActionOp1 = parseInt(resultOfActionOp1);
-            resultOfActionOp2 = parseInt(resultOfActionOp2);
-            resultOfActionOp3 = parseInt(resultOfActionOp3);
-            resultOfActionOp4 = parseInt(resultOfActionOp4);
-
-            arr = [resultOfActionOp1, resultOfActionOp2, resultOfActionOp3, resultOfActionOp4];
-
-            option1.innerHTML = arr[0];
-            option2.innerHTML = arr[1];
-            option3.innerHTML = arr[2];
-            option4.innerHTML = arr[3];
         }
 
         if (b == b3) {
@@ -226,20 +200,6 @@ let i = 0,
                 let a = getRandomInt9();
                 resultOfActionOp4 += a;
             }
-
-            resultOfActionOp1 = parseInt(resultOfActionOp1);
-            resultOfActionOp2 = parseInt(resultOfActionOp2);
-            resultOfActionOp3 = parseInt(resultOfActionOp3);
-            resultOfActionOp4 = parseInt(resultOfActionOp4);
-
-            arr = [resultOfActionOp1, resultOfActionOp2, resultOfActionOp3, resultOfActionOp4];
-
-            arr.sort();
-
-            option1.innerHTML = arr[0];
-            option2.innerHTML = arr[1];
-            option3.innerHTML = arr[2];
-            option4.innerHTML = arr[3];
         }
 
         if (b == b4) {
@@ -255,21 +215,20 @@ let i = 0,
                 let a = getRandomInt9();
                 resultOfActionOp3 += a;
             }
-
-            resultOfActionOp1 = parseInt(resultOfActionOp1);
-            resultOfActionOp2 = parseInt(resultOfActionOp2);
-            resultOfActionOp3 = parseInt(resultOfActionOp3);
-            resultOfActionOp4 = parseInt(resultOfActionOp4);
-
-            arr = [resultOfActionOp1, resultOfActionOp2, resultOfActionOp3, resultOfActionOp4];
-
-            option1.innerHTML = arr[0];
-            option2.innerHTML = arr[1];
-            option3.innerHTML = arr[2];
-            option4.innerHTML = arr[3];
         }
 
+        resultOfActionOp1 = parseInt(resultOfActionOp1);
+        resultOfActionOp2 = parseInt(resultOfActionOp2);
+        resultOfActionOp3 = parseInt(resultOfActionOp3);
+        resultOfActionOp4 = parseInt(resultOfActionOp4);
 
+        
+        arr = [resultOfActionOp1, resultOfActionOp2, resultOfActionOp3, resultOfActionOp4];
+
+        option1.innerHTML = arr[0];
+        option2.innerHTML = arr[1];
+        option3.innerHTML = arr[2];
+        option4.innerHTML = arr[3];
     },
 
 
