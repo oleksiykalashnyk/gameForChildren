@@ -258,7 +258,7 @@ let i = 0,
 
     startA = (a) => {
         mainMusic.loop = true;
-        mainMusic.volume = 0.2;
+        mainMusic.volume = 0.15;
         mainMusic.play();
         if (error < 3) {
             if (a == resultOfAction) {
@@ -269,7 +269,7 @@ let i = 0,
                 start();
             } else {
                 error++;
-                let     errorMusic = new Audio('styles/b.wav');
+                let errorMusic = new Audio('styles/b.wav');
                 errorMusic.volume = 0.1;
                 errorMusic.play();
                 start();
