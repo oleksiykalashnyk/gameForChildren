@@ -25,6 +25,7 @@ File path | File  | Description
 /styles/       |**main.css** |          App styles
 /js/           |**script.js**|         The main mechanism of the application
 
+-------------------------------
 
 #### The project was made as part of the training.Noncommercial project.
 ###### All sounds, images, and so on belong to the authors (who couldn't be found).
