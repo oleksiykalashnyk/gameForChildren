@@ -7,9 +7,11 @@
     font-family: 'AbhayaLibre';
     src: url('AbhayaLibre-Regular.ttf') format('truetype');
 }
-*{
-    transition: 3s;
+
+* {
+    transition: 2s;
 }
+
 body,
 html {
     margin: 0;
@@ -48,13 +50,12 @@ h4 {
     width: 100%;
     background-color: rgba(85, 32, 233, 0.747);
     margin-bottom: 10px;
-    border-radius: 10px;
     justify-content: center;
     align-items: center;
 }
 
 .mini-table_left {
-    width: 40%;
+    width: 50%;
 }
 
 .mini-table_left>* {
@@ -64,7 +65,7 @@ h4 {
 }
 
 .mini-table_right {
-    width: 40%;
+    width: 50%;
 }
 
 .mini-table_right>* {
@@ -83,7 +84,6 @@ h4 {
 .cart {
     display: flex;
     flex-flow: column;
-    height: 600px;
     width: 300px;
     margin: auto;
 }
@@ -92,7 +92,6 @@ h4 {
     display: flex;
     flex-flow: column;
     align-items: center;
-    height: 200px;
     width: 100%;
     background-color: rgba(8, 4, 19, 0.747);
 
@@ -103,14 +102,18 @@ h4 {
     color: rgb(0, 255, 42);
     font-size: 2.5rem;
     align-self: center;
-    padding: 10px;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  letter-spacing: .15em;
-    animation: 
-    typing 4s steps(30, end),
-    blink-caret .5s step-end infinite;
+    padding: 10px 0 10px 10px;
+    margin: 10px 0 10px 0;
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    letter-spacing: .15em;
+    animation:
+        typing 3006.98ms steps(30, end),
+        blink-caret 1s step-end infinite;
 }
 
 
@@ -134,31 +137,34 @@ h4 {
 }
 
 
+#sukces {
+    font-size: 3rem;
+    color: rgb(1, 241, 81);
+}
+
+#unSukces {
+    font-size: 3rem;
+    color: #fc0606;
+    text-shadow: 0 -1px rgba(0, 0, 0, .1);
+    -webkit-animation: pulsate 1245.54ms cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite;
+    animation: pulsate 1245.54ms cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite;
+}
+
 @-webkit-keyframes pulsate {
     50% {
-        color: #fff;
-        text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+        color: rgba(255, 255, 255, 0.514);
+        text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #f38282, 0 0 8px #fff;
     }
 }
 
 @keyframes pulsate {
     50% {
-        color: #fff;
-        text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #ffd, 0 0 8px #fff;
+        color: rgba(255, 255, 255, 0.514);
+        text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #f16969, 0 0 8px #fff;
     }
 }
 
-#sukces {
-    font-size: 3rem;
-    color: rgb(1, 241, 81);
-}
-#unSukces {
-    font-size: 3rem;
-    color: rgb(252, 6, 6);
-    text-shadow: 0 -1px rgba(0, 0, 0, .1);
-    -webkit-animation: pulsate 2s linear infinite;
-    animation: pulsate 2s linear infinite;
-}
+
 .unSukces {
     font-size: 3rem;
     color: rgb(252, 6, 6);
@@ -172,11 +178,24 @@ h4 {
 
 
 @keyframes typing {
-    from { width: 0 }
-    to { width: 80% }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange }
+    from {
+        width: 0
+    }
+
+    to {
+        width: 80%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: orange
+    }
+}
