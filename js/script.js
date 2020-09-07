@@ -15,6 +15,7 @@ let i = 0,
     y = 0,
     speed = 120,
     elementIdTime = document.getElementById("time"),
+    mainMusic = new Audio('styles/main.mp3'),
 
     getRandomInt9 = () => {
         return Math.floor(Math.random() * (9 - 1)) + 1;
@@ -237,7 +238,6 @@ let i = 0,
     succ = 0,
 
     start = () => {
-
         if (error < 3) {
             genAsk();
             showOptions();
@@ -245,12 +245,14 @@ let i = 0,
             document.getElementById("win").innerHTML = succ;
             document.querySelector(".game").style.display = "none";
             document.querySelector(".loss").style.display = "flex";
+            mainMusic.pause();
             new Audio('styles/fon.mp3').play();
             
         }
     },
 
     startA = (a) => {
+        mainMusic.play();
         if (error < 3) {
             if (a == resultOfAction) {
                 succ++;
@@ -263,5 +265,5 @@ let i = 0,
             }
         }
     };
-
+    
 start();
