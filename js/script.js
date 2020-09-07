@@ -8,24 +8,30 @@ let i = 0,
     resultOfActionOp3 = "",
     resultOfActionOp4 = "",
     arr = [],
+    randomArr = [],
     A = "",
     B = "",
     C = "",
     x = 0,
     y = 0,
+    error = 0,
+    succ = 0,
     speed = 120,
     elementIdTime = document.getElementById("time"),
     mainMusic = new Audio('styles/main.mp3'),
     lossMusic = new Audio('styles/fon.mp3'),
 
     getRandomInt9 = () => {
-        return Math.floor(Math.random() * (9 - 1)) + 1;
+        return Math.floor(Math.random() * 9) + 1;
     },
 
     getRandomInt4 = () => {
         return Math.floor(Math.random() * 4) + 1;
     },
 
+    getRandomInt123 = (a) => {
+        return Math.floor(Math.random() * a) + 1;
+    },
 
     genAsk = () => {
 
@@ -87,54 +93,18 @@ let i = 0,
         }
     },
 
-
-    switchSymbolOptions = (a, b, c) => {
-        switch (b) {
-            case "+":
-                resultOfActionOp1 = a + c;
-                break;
-
-            case "-":
-                resultOfActionOp2 = a - c;
-                break;
-
-            case "*":
-                resultOfActionOp3 = a * c;
-                break;
-
-            case "/":
-                resultOfActionOp4 = a / c;
-                break;
-            default:
-                resultOfActionOp1 = 0;
-                break;
+    shufflingAnArray = (arr) => {
+        let j, temp;
+        for (let i = arr.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            temp = arr[j];
+            arr[j] = arr[i];
+            arr[i] = temp;
         }
+        return arr;
     },
 
     showOptions = () => {
-        let a = A,
-            b = B,
-            b1 = "+",
-            b2 = "-",
-            b3 = "*",
-            b4 = "/",
-            c = C;
-
-        switch (b) {
-            case 1:
-                b = "+";
-                break;
-            case 2:
-                b = "-";
-                break;
-            case 3:
-                b = "*";
-                break;
-            case 4:
-                b = "/";
-                break;
-        }
-
         let option1 = document.getElementById("option-1"),
             option2 = document.getElementById("option-2"),
             option3 = document.getElementById("option-3"),
@@ -145,82 +115,35 @@ let i = 0,
         sukcesShow.innerHTML = succ;
         errorShow.innerHTML = error;
 
-
-        switchSymbolOptions(a, b1, c);
-        switchSymbolOptions(a, b2, c);
-        switchSymbolOptions(a, b3, c);
-        switchSymbolOptions(a, b4, c);
-
-
-        resultOfActionOp1 = parseInt(resultOfActionOp1);
-        resultOfActionOp2 = parseInt(resultOfActionOp2);
-        resultOfActionOp3 = parseInt(resultOfActionOp3);
-        resultOfActionOp4 = parseInt(resultOfActionOp4);
-
-
-        if (b == b1) {
-            if (resultOfAction == resultOfActionOp2) {
-                let a = getRandomInt9();
-                resultOfActionOp2 += a;
-            }
-            if (resultOfAction == resultOfActionOp3) {
-                let a = getRandomInt9();
-                resultOfActionOp3 += a;
-            }
-            if (resultOfAction == resultOfActionOp4) {
-                let a = getRandomInt9();
-                resultOfActionOp4 += a;
-            }
+        for (let i = -12; i <= 99; i++) {
+            randomArr.push(i);
         }
 
-        if (b == b2) {
-            if (resultOfAction == resultOfActionOp1) {
-                let a = getRandomInt9();
-                resultOfActionOp1 += a;
-            }
-            if (resultOfAction == resultOfActionOp3) {
-                let a = getRandomInt9();
-                resultOfActionOp3 += a;
-            }
-            if (resultOfAction == resultOfActionOp4) {
-                let a = getRandomInt9();
-                resultOfActionOp4 += a;
-            }
-        }
+        let realResultInRandomArray = randomArr.indexOf(resultOfAction, 0);
+        resultOfActionOp1 = randomArr[realResultInRandomArray];
+        console.log(randomArr[realResultInRandomArray]);
+        randomArr.splice(realResultInRandomArray, 1);
+        console.log(randomArr[realResultInRandomArray]);
 
-        if (b == b3) {
-            if (resultOfAction == resultOfActionOp1) {
-                let a = getRandomInt9();
-                resultOfActionOp1 += a;
-            }
-            if (resultOfAction == resultOfActionOp2) {
-                let a = getRandomInt9();
-                resultOfActionOp2 += a;
-            }
-            if (resultOfAction == resultOfActionOp4) {
-                let a = getRandomInt9();
-                resultOfActionOp4 += a;
-            }
-        }
+        do {
+            let randomNum2 = getRandomInt123(randomArr.length);
+            resultOfActionOp2 = randomArr[randomNum2];
+            randomArr.splice(randomNum2, 1);
 
-        if (b == b4) {
-            if (resultOfAction == resultOfActionOp1) {
-                let a = getRandomInt9();
-                resultOfActionOp1 += a;
-            }
-            if (resultOfAction == resultOfActionOp2) {
-                let a = getRandomInt9();
-                resultOfActionOp2 += a;
-            }
-            if (resultOfAction == resultOfActionOp3) {
-                let a = getRandomInt9();
-                resultOfActionOp3 += a;
-            }
-        }
+            let randomNum3 = getRandomInt123(randomArr.length);
+            resultOfActionOp3 = randomArr[randomNum3];
+            randomArr.splice(randomNum3, 1);
+
+            let randomNum4 = getRandomInt123(randomArr.length);
+            resultOfActionOp4 = randomArr[randomNum4];
+            randomArr.splice(randomNum4, 1);
+        } while (resultOfActionOp2 == undefined || resultOfActionOp3 == undefined || resultOfActionOp4 == undefined);
+
+        randomArr = [];
 
         arr = [resultOfActionOp1, resultOfActionOp2, resultOfActionOp3, resultOfActionOp4];
 
-        arr.sort();
+        shufflingAnArray(arr);
 
         option1.innerHTML = arr[0];
         option2.innerHTML = arr[1];
@@ -232,11 +155,8 @@ let i = 0,
     query = (a) => {
         x = document.getElementById(`option-${a}`);
         y = +x.innerText;
-        startA(y);
+        validationResult(y);
     },
-
-    error = 0,
-    succ = 0,
 
     start = () => {
         if (error < 3) {
@@ -256,7 +176,7 @@ let i = 0,
         }
     },
 
-    startA = (a) => {
+    validationResult = (a) => {
         mainMusic.loop = true;
         mainMusic.volume = 0.15;
         mainMusic.play();
@@ -270,7 +190,7 @@ let i = 0,
             } else {
                 error++;
                 let errorMusic = new Audio('styles/b.wav');
-                errorMusic.volume = 0.1;
+                errorMusic.volume = 0.2;
                 errorMusic.play();
                 start();
             }

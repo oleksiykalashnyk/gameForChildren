@@ -9,15 +9,19 @@
 }
 
 * {
-    transition: 2s;
+    transition: 1s;
 }
 
 body,
 html {
     margin: 0;
     padding: 0;
-    background-color: #0093E9;
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    background: linear-gradient(270deg, #f6d365, #fda085, #84fab0, #8fd3f4, #30cfd0, #330867);
+    background-size: 1200% 1200%;
+    -webkit-animation: AnimationBackGround 30s ease infinite;
+    -moz-animation: AnimationBackGround 30s ease infinite;
+    -o-animation: AnimationBackGround 30s ease infinite;
+    animation: AnimationBackGround 30s ease infinite;
     z-index: 0;
 
 }
@@ -275,4 +279,60 @@ h4 {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+}
+
+@-webkit-keyframes AnimationBackGround {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-moz-keyframes AnimationBackGround {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@-o-keyframes AnimationBackGround {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+@keyframes AnimationBackGround {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
 }
