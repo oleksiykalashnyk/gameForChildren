@@ -252,6 +252,7 @@ let i = 0,
     },
 
     startA = (a) => {
+        mainMusic.loop = true;
         mainMusic.play();
         if (error < 3) {
             if (a == resultOfAction) {
