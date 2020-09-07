@@ -24,13 +24,6 @@ let i = 0,
         return Math.floor(Math.random() * 4) + 1;
     },
 
-    // typeWriter = () => {
-    //     if (i < txt.length) {
-    //         elementIdTime.innerHTML += txt.charAt(i);
-    //         i++;
-    //         setTimeout(typeWriter, speed);
-    //     }
-    // },
 
     genAsk = () => {
 
@@ -67,7 +60,6 @@ let i = 0,
 
         txt = `${a} ${b} ${c} = ?`;
         elementIdTime.innerHTML = txt;
-        // typeWriter();
     },
 
     switchSymbol = (a, b, c) => {
@@ -157,6 +149,13 @@ let i = 0,
         switchSymbolOptions(a, b3, c);
         switchSymbolOptions(a, b4, c);
 
+        
+        resultOfActionOp1 = parseInt(resultOfActionOp1);
+        resultOfActionOp2 = parseInt(resultOfActionOp2);
+        resultOfActionOp3 = parseInt(resultOfActionOp3);
+        resultOfActionOp4 = parseInt(resultOfActionOp4);
+
+        
         if (b == b1) {
             if (resultOfAction == resultOfActionOp2) {
                 let a = getRandomInt9();
@@ -216,14 +215,10 @@ let i = 0,
                 resultOfActionOp3 += a;
             }
         }
-
-        resultOfActionOp1 = parseInt(resultOfActionOp1);
-        resultOfActionOp2 = parseInt(resultOfActionOp2);
-        resultOfActionOp3 = parseInt(resultOfActionOp3);
-        resultOfActionOp4 = parseInt(resultOfActionOp4);
-
-        
+                
         arr = [resultOfActionOp1, resultOfActionOp2, resultOfActionOp3, resultOfActionOp4];
+
+        arr.sort();
 
         option1.innerHTML = arr[0];
         option2.innerHTML = arr[1];
@@ -250,13 +245,13 @@ let i = 0,
             document.getElementById("win").innerHTML = succ;
             document.querySelector(".game").style.display = "none";
             document.querySelector(".loss").style.display = "flex";
-            new Audio('styles/bb.wav').play();
             new Audio('styles/fon.mp3').play();
+            
         }
     },
 
     startA = (a) => {
-        if (error <= 3) {
+        if (error < 3) {
             if (a == resultOfAction) {
                 succ++;
                 new Audio('styles/a.mp3').play();
