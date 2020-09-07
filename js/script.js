@@ -17,8 +17,6 @@ let i = 0,
     elementIdTime = document.getElementById("time"),
     mainMusic = new Audio('styles/main.mp3'),
     lossMusic = new Audio('styles/fon.mp3'),
-    succMusic = new Audio('styles/a.mp3'),
-    errorMusic = new Audio('styles/b.wav'),
 
     getRandomInt9 = () => {
         return Math.floor(Math.random() * (9 - 1)) + 1;
@@ -265,11 +263,13 @@ let i = 0,
         if (error < 3) {
             if (a == resultOfAction) {
                 succ++;
+                let succMusic = new Audio('styles/a.mp3');
                 succMusic.volume = 0.3;
                 succMusic.play();
                 start();
             } else {
                 error++;
+                let     errorMusic = new Audio('styles/b.wav');
                 errorMusic.volume = 0.1;
                 errorMusic.play();
                 start();
