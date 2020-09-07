@@ -54,6 +54,60 @@ h4 {
     align-items: center;
 }
 
+.tableResult>h2 {
+    color: rgb(255, 255, 255);
+}
+
+.tableResult {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.747);
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#win {
+    font-size: 8rem;
+    margin: 30px 0 50px 0;
+}
+
+#tab {
+    background-color: rgb(255 255 255 / 40%);
+}
+
+.rainbow {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 32px;
+    font-family: monospace;
+    letter-spacing: 5px;
+}
+
+.rainbow_text_animated {
+    background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+    background-size: 400%;
+}
+
+@keyframes rainbow_animation {
+
+    0%,
+    100% {
+        background-position: 0
+    }
+
+    50% {
+        background-position: 100%
+    }
+}
+
+
+
 .mini-table_left {
     width: 50%;
 }
@@ -77,7 +131,7 @@ h4 {
 
 .main_block {
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     height: 100vh;
 }
 
@@ -187,7 +241,6 @@ h4 {
     }
 }
 
-/* The typewriter cursor effect */
 @keyframes blink-caret {
 
     from,
@@ -198,4 +251,32 @@ h4 {
     50% {
         border-color: orange
     }
+}
+
+.loss {
+    display: none;
+}
+
+.button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    transition: 0s;
+}
+
+.button:hover {
+    background-color: #3e8e41
+}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }

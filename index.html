@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Happy calculator</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body>
 
     <div class="main_block">
-        <div class="cart">
+        <div class="cart game">
             <div class="mini-table">
                 <div class="mini-table_left">
                     <h4 id="sukces"></h4>
@@ -25,7 +25,6 @@
             </div>
             <div class="cart_body">
                 <div class="cart_body-title">
-                    <h3>Wybierz właściwą odpowiedź</h3>
 
                     <div class="selectQuery" id="reaction-1" onclick="query(1)">
                         <h2>a)</h2>
@@ -46,6 +45,15 @@
 
                 </div>
             </div>
+        </div>
+
+
+        <div class="cart loss">
+            <div class="tableResult" id="tab">
+                <h2>Result</h2>
+                <h1 id="win" class="rainbow rainbow_text_animated">U have</h1>
+            </div>
+            <button onclick="location.reload()" class="button">Start again</button>
         </div>
     </div>
     <script src="js/script.js"></script>

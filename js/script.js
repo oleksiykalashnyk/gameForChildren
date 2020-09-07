@@ -283,9 +283,16 @@ let i = 0,
     succ = 0,
 
     start = () => {
-        if (error <= 3) {
+
+        if (error < 3) {
             genAsk();
             showOptions();
+        } else {
+            document.getElementById("win").innerHTML = succ;
+            document.querySelector(".game").style.display = "none";
+            document.querySelector(".loss").style.display = "flex";
+            new Audio('styles/bb.wav').play();
+            new Audio('styles/fon.mp3').play();
         }
     },
 
@@ -293,9 +300,11 @@ let i = 0,
         if (error <= 3) {
             if (a == resultOfAction) {
                 succ++;
+                new Audio('styles/a.mp3').play();
                 start();
             } else {
                 error++;
+                new Audio('styles/b.wav').play();
                 start();
             }
         }
