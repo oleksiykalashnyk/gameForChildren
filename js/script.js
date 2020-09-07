@@ -16,6 +16,9 @@ let i = 0,
     speed = 120,
     elementIdTime = document.getElementById("time"),
     mainMusic = new Audio('styles/main.mp3'),
+    lossMusic = new Audio('styles/fon.mp3'),
+    succMusic = new Audio('styles/a.mp3'),
+    errorMusic = new Audio('styles/b.wav'),
 
     getRandomInt9 = () => {
         return Math.floor(Math.random() * (9 - 1)) + 1;
@@ -150,13 +153,13 @@ let i = 0,
         switchSymbolOptions(a, b3, c);
         switchSymbolOptions(a, b4, c);
 
-        
+
         resultOfActionOp1 = parseInt(resultOfActionOp1);
         resultOfActionOp2 = parseInt(resultOfActionOp2);
         resultOfActionOp3 = parseInt(resultOfActionOp3);
         resultOfActionOp4 = parseInt(resultOfActionOp4);
 
-        
+
         if (b == b1) {
             if (resultOfAction == resultOfActionOp2) {
                 let a = getRandomInt9();
@@ -216,7 +219,7 @@ let i = 0,
                 resultOfActionOp3 += a;
             }
         }
-                
+
         arr = [resultOfActionOp1, resultOfActionOp2, resultOfActionOp3, resultOfActionOp4];
 
         arr.sort();
@@ -245,26 +248,33 @@ let i = 0,
             document.getElementById("win").innerHTML = succ;
             document.querySelector(".game").style.display = "none";
             document.querySelector(".loss").style.display = "flex";
+
             mainMusic.pause();
-            new Audio('styles/fon.mp3').play();
-            
+
+            lossMusic.loop = true;
+            lossMusic.volume = 0.1;
+            lossMusic.play();
+
         }
     },
 
     startA = (a) => {
         mainMusic.loop = true;
+        mainMusic.volume = 0.2;
         mainMusic.play();
         if (error < 3) {
             if (a == resultOfAction) {
                 succ++;
-                new Audio('styles/a.mp3').play();
+                succMusic.volume = 0.3;
+                succMusic.play();
                 start();
             } else {
                 error++;
-                new Audio('styles/b.wav').play();
+                errorMusic.volume = 0.1;
+                errorMusic.play();
                 start();
             }
         }
     };
-    
+
 start();
